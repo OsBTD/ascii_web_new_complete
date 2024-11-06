@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascii_art_web</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Template_Container">
+        <div class="navbar">
+            <a href="/">
+                <img src="/images/Home_Button.svg" alt="Home Button">
+            </a>
+            <div class="Pipe1">
+                <img src="/images/Pipe1.svg" alt="Pipe 1">
+            </div>
+            <a href="/about">
+                <img src="/images/About_Button.svg" alt="About Button">
+            </a>
+            <div class="Pipe2">
+                <img src="/images/Pipe2.svg" alt="Pipe 2">
+            </div>
+            <a href="/readme">
+                <img src="/images/Readme_Button.svg" alt="Readme Button">
+            </a>
+        </div>
+        <div class="Banner1">
+            <img src="/images/Banner.svg" alt="Banner">
+        </div>
+        <form method="post" action="/ascii">
+            <div class="Style_Buttons">
+                <div class="Choose_Style_Text">
+                    <img src="/images/Choose_Style.svg" alt="Choose Style Text">
+                </div>
+                <label for="standard">
+                    <input type="radio" name="Style" value="standard" id="standard" checked>
+                    <img src="/images/Standard_Button.svg" alt="Standard Style">
+                </label>
+                <label for="shadow">
+                    <input type="radio" name="Style" value="shadow" id="shadow">
+                    <img src="/images/Shadow_Button.svg" alt="Shadow Style">
+                </label>
+                <label for="thinkertoy" class="ThinkerToy_Button">
+                    <input type="radio" name="Style" value="thinkertoy" id="thinkertoy">
+                    <img src="/images/Thinkertoy_Button.svg" alt="Thinkertoy Style">
+                </label>
+                <div class="dropdown">
+                    <a href="#" class="Download_Button" data-tooltip="Choose download format">
+                        <img src="/images/Download_Button.svg" alt="Download Button">
+                    </a>
+                    <div class="dropdown_content">
+                        <button type="submit" formaction="/download/html" name="output" value="{{.Output}}"
+                            class="html_button" data-tooltip="Download as .html file">
+                            <img src="/images/HTML_Button.svg" alt="Download Button">
+                        </button>
+                        <button type="submit" formaction="/download/txt" name="output" value="{{.Output}}"
+                            class="txt_button" data-tooltip="Download as .txt file">
+                            <img src="/images/TXT_Button.svg" alt="Download Button">
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <main class="IO">
+                <div class="input_area">
+                    <textarea id=text_area name="text" class="custom-input" placeholder="enter your text here"
+                        maxlength="1000"></textarea>
+                    <button class="Reset_Button" type="reset">
+                        <img src="/images/Reset_Button.svg" alt="Reset">
+                    </button>
+                    <button class="GO_Button" type="submit">
+                        <img src="/images/GO_Button.svg" alt="Go">
+                    </button>
+                </div>
+                <div class="output_area">
+                    <pre>{{.Output}}</pre>
+                    {{if .UnprintableWarning}}
+                    <div id="unprintableWarning" class="warning-message">
+                        <img src="/images/Note_Unprintable.svg" alt="Warning">
+                    </div>
+                    {{end}}
+                </div>
+            </main>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascii_art_web</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inconsolata', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .Title {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .Text {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.701);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .Description,
+        .Technologies,
+        .Installation,
+        .Usage,
+        .Implementation,
+        .Join_Contact {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        pre,
+        code {
+            background-color: #000000;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <button type="button" class="Home_Button" onclick="window.location.href='/'">
+            <img src="/images/Home_Button.svg" alt="Home Button">
+        </button>
+        <div class="Pipe1">
+            <img src="/images/Pipe1.svg" alt="Pipe 1">
+        </div>
+        <button type="button" class="About_Button" onclick="window.location.href='/about'">
+            <img src="/images/About_Button.svg" alt="About Button">
+        </button>
+        <div class="Pipe2">
+            <img src="/images/Pipe2.svg" alt="Pipe 2">
+        </div>
+        <button type="button" class="Readme_Button" onclick="window.location.href='/readme'">
+            <img src="/images/Readme_Button.svg" alt="Readme Button">
+        </button>
+    </div>
+
+    <div class="Title">
+        <img src="images/Readme_Title.svg" alt="Readme Title">
+    </div>
+    <div class="Text">
+
+        <p class="Welcome">
+            Welcome to the ASCII Art Generator website! This website allows you to turn text into ASCII art using
+            different styles. You can download the content in text or HTML formats, or copy the art to the clipboard.
+        </p>
+
+        <p class="Description">
+            **Description**
+            This project, as part of the ZONE01 coursework, comprises several exercises aimed at mastering various
+            aspects of web development, particularly using Go and CSS. Our focus has been on creating a user-friendly
+            interface, implementing robust functionalities, and ensuring the overall consistency and responsiveness of
+            our web application.
+        </p>
+
+        <p class="Technologies">
+            **Technologies**
+            - GOLANG
+            - HTML
+            - CSS
+            - JavaScript
+        </p>
+
+        <p class="Installation">
+            **Installation**
+            To install and run the project locally:
+            1. Clone the repository:
+        <pre><code>git clone https://github.com/OsBTD/ascii-art-web-complete.git</code></pre>
+        2. Navigate to the project directory:
+        <pre><code>cd ascii-art-web-complete</code></pre>
+        3. Build and run the Go server:
+        <pre><code>go run main.go</code></pre>
+        4. Open your web browser and visit `http://localhost:8080`.
+
+        **To run the project using Docker:**
+        - Ensure Docker is installed and running on your machine.
+        - Pull the Docker image:
+        <pre><code>docker pull ascii-art-web</code></pre>
+        - Run the Docker container:
+        <pre><code>docker run -p 8080:8080 ascii-art-web</code></pre>
+
+        **Docker Commands Explained:**
+        - <code>docker build -t ascii-art-web .</code>: Builds the Docker image from the Dockerfile in the
+        current directory and tags it as ascii-art-web.
+        - <code>docker run -p 8080:8080 ascii-art-web</code>: Runs a container from the ascii-art-web image,
+        mapping port 8080 on your machine to port 8080 in the container.
+
+        If you make changes to your code, rebuild the image using:
+        <pre><code>docker build -t ascii-art-web .</code></pre>
+        </p>
+
+        <p class="Usage">
+            **Usage**
+            - **Text Input**: Enter the text you want to convert into ASCII art.
+            - **Banner Selection**: Choose from various banners.
+            - **Generate**: Click the button to generate the ASCII art.
+            - **Export**: Download the ASCII art in text or HTML formats or copy it to the clipboard.
+        </p>
+
+        <p class="Implementation">
+            **Implementation Details**
+            - **Algorithm**: The ASCII art generation algorithm uses predefined banners to convert text characters into
+            corresponding ASCII art representations.
+            - **HTTP Server**: The server is written in Go and handles requests for generating and exporting ASCII art.
+            - **Docker**: The project includes a Dockerfile for containerization, following best practices for creating
+            images and managing containers.
+        </p>
+
+        <p class="Join_Contact">
+            **Join Us on Our Journey**
+            We welcome contributions! Please fork the repository and submit pull requests.
+
+            **Contact**
+            If you have any questions or feedback, feel free to contact us at our email: borntolearn314@gmail.com.
+        </p>
+
+    </div>
+
+</body>
+
+</html>
